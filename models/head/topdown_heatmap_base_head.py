@@ -3,6 +3,12 @@ from abc import ABCMeta, abstractmethod
 
 import numpy as np
 import torch.nn as nn
+import os
+import sys
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
 
 from utils.top_down_eval import keypoints_from_heatmaps
 
