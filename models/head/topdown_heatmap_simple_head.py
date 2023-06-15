@@ -1,4 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import os
+import sys
 from abc import ABCMeta, abstractmethod
 
 import numpy as np
@@ -6,10 +8,13 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
 
-from ..utils.top_down_eval import keypoints_from_heatmaps, pose_pck_accuracy
-from ..utils.transform import flip_back
-from ..utils.util import constant_init, normal_init, resize
+from utils.top_down_eval import keypoints_from_heatmaps, pose_pck_accuracy
+from utils.transform import flip_back
+from utils.util import constant_init, normal_init, resize
 
 
 class TopdownHeatmapBaseHead(nn.Module):
