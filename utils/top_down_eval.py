@@ -3,8 +3,14 @@ import warnings
 
 import cv2
 import numpy as np
+import os
+import sys
 
-from .post_processing import transform_preds
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
+
+from utils.post_processing.post_transforms import transform_preds
 
 # def heatmap2coords(heatmaps: np.ndarray, original_resolution: tuple[int, int]=(256, 192)) -> np.ndarray:
 #     __, __, heatmap_h, heatmap_w = heatmaps.shape

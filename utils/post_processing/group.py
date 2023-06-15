@@ -6,8 +6,14 @@
 import numpy as np
 import torch
 from munkres import Munkres
+import os
+import sys
 
-from ..top_down_eval import post_dark_udp
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
+
+from utils.top_down_eval import post_dark_udp
 
 
 def _py_max_match(scores):
