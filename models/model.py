@@ -1,8 +1,14 @@
+import os
+import sys
+
 import torch.nn as nn
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
 
 from backbone.vit import ViT
 from head.topdown_heatmap_simple_head import TopdownHeatmapSimpleHead
-
 
 __all__ = ['ViTPose']
 
