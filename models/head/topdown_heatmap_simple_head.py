@@ -5,12 +5,12 @@ import sys
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from topdown_heatmap_base_head import TopdownHeatmapBaseHead
 
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.insert(0, parent_dir)
 os.chdir(parent_dir)
 
+from topdown_heatmap_base_head import TopdownHeatmapBaseHead
 from utils.top_down_eval import pose_pck_accuracy
 from utils.transform import flip_back
 from utils.util import constant_init, normal_init, resize
